@@ -1,17 +1,28 @@
+var unsortedIntegers = [String]()
+func input () -> [String]{
+    var line : String?
+repeat {
+    line = readLine()
+    if line != nil {
+        unsortedIntegers.append(line!)
+    }
 
+} while line != nil
+return unsortedIntegers
+}
 bubbleSort(unsortedIntegers)
-func swap(integers: inout [Int], firstIndex: Int, secondIndex: Int){
+func swap(integers: inout [String], firstIndex: Int, secondIndex: Int){
 let temp =  integers[firstIndex]
 integers[firstIndex] = integers[secondIndex]
 integers[secondIndex] = temp
 }
-func bubbleSort(_ unsortedIntegers: [Int])  {
-    var sortingIntegers = unsortedIntegers
+func bubbleSort(_ unsortedIntegers: [String])  {
+    var sortingIntegers = input()
 
     var totalSwapCount = 0
     var  swapCountPerPass: Int
     var x  = 0
-    print("Pass: 0, Swaps: 0/0, Array: \(unsortedIntegers)")
+//    print("Pass: 0, Swaps: 0/0, Array: \(unsortedIntegers)")
     repeat {
         x += 1
         swapCountPerPass = 0
@@ -28,9 +39,8 @@ func bubbleSort(_ unsortedIntegers: [Int])  {
 
             }
         }
-        print("Pass: \(x), Swaps: \(swapCountPerPass)/\(totalSwapCount), Array: \(sortingIntegers)")
+  //      print("Pass: \(x), Swaps: \(swapCountPerPass)/\(totalSwapCount), Array: \(sortingIntegers)")
    
     }while swapCountPerPass > 0
-}
 
-   
+}
